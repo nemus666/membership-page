@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Illuminati New World Order | Official Headquarters</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --dark-bg: #0a0a14;
+            --darker-bg: #05050a;
+            --gold: #d4af37;
+            --light-gold: #e6c229;
+            --text: #e0e0e0;
+            --card-bg: rgba(20, 20, 35, 0.8);
+            --accent-red: #ad4f37;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        /* --- NAVIGATION & HOVER EFFECTS --- */
+        nav { 
+            background: #000; 
+            border-bottom: 2px solid var(--accent-red); 
+            padding: 20px; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
+        nav a { 
+            color: var(--accent-red); 
+            margin: 0 20px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        /* Highlight/Bold on Touch/Hover */
+        nav a:hover, nav a:active {
+            color: #fff;
+            text-shadow: 0 0 10px var(--accent-red);
+            transform: scale(1.1);
+        }
+
+        /* --- HAMBURGER MENU --- */
+        #hamburger {
+            cursor: pointer; 
+            position: fixed; 
+            top: 10px; 
+            left: 10px; 
+            z-index: 1001; 
+            background: #000; 
+            border: 1px solid var(--accent-red); 
+            padding: 10px; 
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        #hamburger:hover {
+            box-shadow: 0 0 15px var(--accent-red);
+            background: #111;
+        }
+
+        .bar { width: 25px; height: 3px; background-color: var(--accent-red); margin: 4px 0; transition: 0.3s; }
+        #hamburger:hover .bar { background-color: #fff; }
+
+        #sideMenu {
+            height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; 
+            background-color: #000; overflow-x: hidden; transition: 0.5s; 
+            padding-top: 60px; border-right: 2px solid var(--accent-red);
+        }
+
+        #sideMenu a {
+            padding: 15px 30px; text-decoration: none; font-size: 18px; 
+            color: #fff; display: block; transition: 0.3s;
+        }
+
+        #sideMenu a:hover {
+            background-color: var(--accent-red);
+            color: #000;
+            font-weight: bold;
+            padding-left: 40px;
+        }
+
+        /* --- MAIN CONTENT & CARDS --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 30px 0; }
+        .logo img { width: 120px; filter: drop-shadow(0 0 10px var(--gold)); }
+        
+        h1 {
+            font-size: 2.8rem; letter-spacing: 3px; text-transform: uppercase;
+            background: linear-gradient(to right, var(--gold), var(--light-gold));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .main-content { display: flex; justify-content: center; margin: 40px 0; }
+        
+        .card {
+            background: var(--card-bg); border-radius: 15px; padding: 30px;
+            border: 2px solid var(--gold); backdrop-filter: blur(10px);
+            width: 100%; max-width: 600px;
+        }
+
+        /* BLUE GLOW BUTTON */
+        .btn-secure {
+            background: var(--gold); color: black; border: none; padding: 15px;
+            width: 100%; font-weight: bold; cursor: pointer; text-transform: uppercase;
+            transition: all 0.4s ease; border-radius: 5px; margin-top: 10px;
+        }
+
+        .btn-secure:hover {
+            background: #007bff; color: white;
+            box-shadow: 0 0 20px #007bff, 0 0 40px rgba(0, 123, 255, 0.6);
+        }
+
+        /* GOOGLE TRANSLATE BOX */
+        #google_translate_element { margin: 20px 0; }
+        .goog-te-gadget-simple { background: #000 !important; border: 1px solid var(--gold) !important; padding: 8px !important; border-radius: 5px !important; }
+        .goog-te-gadget-simple span { color: var(--gold) !important; font-weight: bold !important; }
+
+        .global-footer {
+            text-align: center; padding: 50px 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1); margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div id="sideMenu">
+        <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 25px; font-size: 36px;">&times;</a>
+        <p style="color: var(--accent-red); padding: 10px 30px; font-weight: bold;">QUICK ACCESS</p>
+        <a href="index.html">HOME</a>
+        <a href="about.html">THE ARCHIVE</a>
+        <a href="membership.html">MEMBERSHIP</a>
+        <a href="Store.html">STORE</a>
+    </div>
+
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">THE ARCHIVE OF TRUTH</a>
+        <a href="news.html">WORLD INTELLIGENCE</a>
+        <a href="membership.html">ASCENSION PROTOCOL</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Illuminati_triangle_eye.png/240px-Illuminati_triangle_eye.png" alt="Logo">
+            </div>
+            <h1>ILLUMINATI NEW WORLD ORDER</h1>
+            <p>The path to enlightenment begins here.</p>
+            <div id="google_translate_element"></div>
+        </header>
+
+        <div class="main-content">
+            <div class="card">
+                <div class="card-header" style="display: flex; align-items: center; margin-bottom: 20px;">
+                    <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--gold); margin-right: 15px;"></i>
+                    <h2>Contact Council</h2>
+                </div>
+                <form action="https://formspree.io/f/xojjagee" method="POST">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: var(--light-gold); font-weight: bold; margin-bottom: 8px;">Your Email</label>
+                        <input type="email" name="_replyto" style="width:100%; padding:12px; background:#1a1a2e; border:1px solid var(--gold); color:white; border-radius:5px;" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; color: var(--light-gold); font-weight: bold; margin-bottom: 8px;">Message</label>
+                        <textarea name="message" rows="5" style="width:100%; padding:12px; background:#1a1a2e; border:1px solid var(--gold); color:white; border-radius:5px;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-secure">Send Secure Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="global-footer">
+        <p>© 2026 Illuminati New World Order. All rights reserved.</p>
+        <p>Official HQ: Undisclosed Location</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sideMenu");
+            menu.style.width = (menu.style.width === "250px") ? "0px" : "250px";
+        }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
