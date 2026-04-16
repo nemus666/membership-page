@@ -2,17 +2,113 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Illuminati New World Order | Official Headquarters</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* This forces all main sections to fill the mobile screen */
+.container, 
+.cinematic-text-section, 
+.contact-box,
+#main-wrapper, .container, .cinematic-text-section {
+    display: block;
+    width: 100%; 
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+        /* Responsive Typography */
+h1 {
+    font-size: 6vw; /* 'vw' stands for Viewport Width */
+    max-font-size: 60px;
+    min-font-size: 24px;
+    text-align: center;
+}
+
+       .official-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 24px;
+    width: 100%;
+    position: relative;
+    margin-top: 60px; /* Push down below hamburger */
+}
+
+/* Seals in top-bar row */
+.seal-side {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seal-side:first-of-type {
+    /* Red logo on far left */
+}
+
+.seal-side:last-of-type {
+    /* UN emblem on far right */
+}
+
+.side-seal {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Portal header centered */
+.portal-header-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 30px;
+}
+
+.official-portal-text {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #ffd700;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.usa-banner-sub {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #ffffff;
+    margin-top: 4px;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.usa-banner-sub .mini-flag {
+    display: none;
+}
+
+        /* --- PRESERVED GOOGLE TRANSLATOR STYLING --- */
+        .goog-te-gadget-simple {
+            background-color: #1a1a1a !important; 
+            border: 1px solid #FFD700 !important; 
+            padding: 5px !important;
+            border-radius: 4px !important;
         }
+        .goog-te-gadget-simple span, .goog-te-menu-value span {
+            color: #FFD700 !important; 
+            font-weight: bold !important;
+        }
+        .goog-te-gadget img { display: none !important; }
+        .goog-te-menu-frame { box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important; }
+        #google_translate_element { margin: 20px 0; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
         :root {
             --dark-bg: #0a0a14;
@@ -28,79 +124,27 @@
             background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
             color: var(--text);
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* --- NAVIGATION & HOVER EFFECTS --- */
-        nav { 
-            background: #000; 
-            border-bottom: 2px solid var(--accent-red); 
-            padding: 20px; 
-            text-align: center; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
-
-        nav a { 
-            color: var(--accent-red); 
-            margin: 0 20px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        /* Highlight/Bold on Touch/Hover */
-        nav a:hover, nav a:active {
-            color: #fff;
-            text-shadow: 0 0 10px var(--accent-red);
-            transform: scale(1.1);
-        }
+        /* --- NAVIGATION --- */
+        nav { background: #000; border-bottom: 2px solid var(--accent-red); padding: 20px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: var(--accent-red); margin: 0 20px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; display: inline-block; }
+        nav a:hover, nav a:active { color: #fff; text-shadow: 0 0 10px var(--accent-red); transform: scale(1.1); }
 
         /* --- HAMBURGER MENU --- */
-        #hamburger {
-            cursor: pointer; 
-            position: fixed; 
-            top: 10px; 
-            left: 10px; 
-            z-index: 1001; 
-            background: #000; 
-            border: 1px solid var(--accent-red); 
-            padding: 10px; 
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        #hamburger:hover {
-            box-shadow: 0 0 15px var(--accent-red);
-            background: #111;
-        }
-
+        #hamburger { cursor: pointer; position: fixed;  top: 10px; left: 10px; z-index: 1001; background: #000; border: 1px solid var(--accent-red); padding: 10px; border-radius: 5px; transition: 0.3s; display: none; }
+        #hamburger:hover { box-shadow: 0 0 15px var(--accent-red); background: #111; }
         .bar { width: 25px; height: 3px; background-color: var(--accent-red); margin: 4px 0; transition: 0.3s; }
-        #hamburger:hover .bar { background-color: #fff; }
+        #sideMenu { height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; background-color: #000; overflow-x: hidden; transition: 0.5s; padding-top: 60px; border-right: 2px solid var(--accent-red); }
+        #sideMenu a { padding: 15px 30px; text-decoration: none; font-size: 18px; color: #fff; display: block; transition: 0.3s; }
+        #sideMenu a:hover { background-color: var(--accent-red); color: #000; font-weight: bold; padding-left: 40px; }
 
-        #sideMenu {
-            height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; 
-            background-color: #000; overflow-x: hidden; transition: 0.5s; 
-            padding-top: 60px; border-right: 2px solid var(--accent-red);
-        }
-
-        #sideMenu a {
-            padding: 15px 30px; text-decoration: none; font-size: 18px; 
-            color: #fff; display: block; transition: 0.3s;
-        }
-
-        #sideMenu a:hover {
-            background-color: var(--accent-red);
-            color: #000;
-            font-weight: bold;
-            padding-left: 40px;
-        }
-
-        /* --- MAIN CONTENT & CARDS --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        /* --- CONTENT CONTAINERS --- */
+        .container { max-width: 100%; width: 100%; margin: 0; padding: 0; display: block; box-sizing: border-box;}
         header { text-align: center; padding: 30px 0; }
-        .logo img { width: 120px; filter: drop-shadow(0 0 10px var(--gold)); }
+        .logo { margin: 0 auto; }
+        .logo img { width: 250px; filter: drop-shadow(0 0 10px var(--gold)); }
         
         h1 {
             font-size: 2.8rem; letter-spacing: 3px; text-transform: uppercase;
@@ -108,54 +152,755 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .main-content { display: flex; justify-content: center; margin: 40px 0; }
-        
-        .card {
-            background: var(--card-bg); border-radius: 15px; padding: 30px;
-            border: 2px solid var(--gold); backdrop-filter: blur(10px);
-            width: 100%; max-width: 600px;
+        nav a { margin: 0 24px; }
+
+        .text-panel {
+            max-width: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
         }
 
-        /* BLUE GLOW BUTTON */
+        .text-panel h2 {
+            text-align: left !important;
+        }
+
+        .text-panel p {
+            width: 100%;
+            max-width: 100%;
+            white-space: normal;
+            padding: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        /* NEW BLUE GLOW BUTTON STYLE */
         .btn-secure {
-            background: var(--gold); color: black; border: none; padding: 15px;
-            width: 100%; font-weight: bold; cursor: pointer; text-transform: uppercase;
-            transition: all 0.4s ease; border-radius: 5px; margin-top: 10px;
+            background: linear-gradient(to bottom, #00c6ff, #0072ff) !important;
+            color: white !important;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(0, 198, 255, 0.4);
+            letter-spacing: 2px;
         }
 
         .btn-secure:hover {
-            background: #007bff; color: white;
-            box-shadow: 0 0 20px #007bff, 0 0 40px rgba(0, 123, 255, 0.6);
+            box-shadow: 0 0 25px rgba(0, 198, 255, 0.8), 0 0 40px rgba(0, 198, 255, 0.4) !important;
+            transform: translateY(-2px);
+            filter: brightness(1.2);
         }
-
-        /* GOOGLE TRANSLATE BOX */
-        #google_translate_element { margin: 20px 0; }
-        .goog-te-gadget-simple { background: #000 !important; border: 1px solid var(--gold) !important; padding: 8px !important; border-radius: 5px !important; }
-        .goog-te-gadget-simple span { color: var(--gold) !important; font-weight: bold !important; }
 
         .global-footer {
             text-align: center; padding: 50px 20px;
             border-top: 1px solid rgba(212, 175, 55, 0.1); margin-top: 40px;
+            color: #a0a0a0; font-size: 12px;
         }
+       /* The container for your text */
+/* This ensures EVERY piece of text inside is visible and moves */
+.cinematic-text-section h2.show, 
+.cinematic-text-section h3.show, 
+.cinematic-text-section p.show {
+    display: block !important;
+    opacity: 0;
+    transform: translateY(30px);
+    /* 3s makes it slow; 'forwards' keeps it visible at the end */
+    animation: movieFadeIn 3s ease-out forwards; 
+}
+
+/* This specifically targets your WELCOME if it's an H2 */
+.cinematic-text-section h2 {
+    color: #FFD700 !important; /* Keeps your Welcome Gold */
+    font-size: 4rem;
+    letter-spacing: 10px;
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.cinematic-text-section h3 {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.cinematic-text-section p {
+    padding: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+@keyframes movieFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Each child waits a bit longer than the last */
+.cinematic-text-section *:nth-child(1) { animation-delay: 0.5s; }
+.cinematic-text-section *:nth-child(2) { animation-delay: 2.0s; }
+.cinematic-text-section *:nth-child(3) { animation-delay: 4.0s; }
+.cinematic-text-section *:nth-child(4) { animation-delay: 6.0s; }
+.cinematic-text-section *:nth-child(5) { animation-delay: 8.0s; }
+
+/* This ensures any remaining paragraphs still show up eventually */
+.cinematic-text-section *:nth-child(n+6) { animation-delay: 10s; }
+
+/* Gallery Slider Button Hover Effects */
+#prevBtn:hover, #nextBtn:hover {
+    background: rgba(255, 215, 0, 0.2) !important;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.dot:hover {
+    opacity: 0.8 !important;
+    transform: scale(1.2);
+}
+
+/* Gallery Slider Styles */
+#gallery-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#gallery-slider .slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#gallery-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+.slider-container {
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+}
+
+.reality-slider-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto 30px auto;
+}
+
+.reality-slider-card {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 calc(50% - 20px);
+    width: calc(50% - 20px);
+    max-width: 420px;
+    min-width: 240px;
+    aspect-ratio: 1.3 / 1;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.45);
+}
+
+.reality-slide-wrapper {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 1.3 / 1;
+}
+
+.reality-slideshow {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    animation: slideAnimation 12s infinite ease-in-out;
+}
+
+.reality-slideshow img {
+    width: 33.33%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.reality-slider-caption {
+    font-size: 9px;
+    color: #ccc;
+    text-align: center;
+    margin: 6px 0 8px 0;
+    letter-spacing: 1.5px;
+    font-family: monospace;
+    background: #000;
+}
+
+@keyframes slideAnimation {
+    0% { transform: translateX(0%); }
+    30% { transform: translateX(0%); }
+    33% { transform: translateX(-33.33%); }
+    63% { transform: translateX(-33.33%); }
+    66% { transform: translateX(-66.66%); }
+    96% { transform: translateX(-66.66%); }
+    100% { transform: translateX(0%); }
+}
+
+@media screen and (max-width: 950px) {
+    /* This forces the outer gold-bordered box to hit the screen edges */
+    .container, .cinematic-text-section, #main-wrapper {
+        width: 100% !important; 
+        max-width: 100% !important;
+        padding: 0 !important; 
+        margin: 0 !important;
+        display: block !important;
+        
+    }
+
+    /* Center top-bar icons and text for mobile */
+    .official-top-bar {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 8px 8px !important;
+        width: 100% !important;
+    }
+
+    .official-top-bar .seal-side:first-of-type {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        flex: 0 0 auto !important;
+        z-index: auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        order: 1 !important;
+    }
+
+    .official-top-bar .seal-side:last-of-type {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        flex: 0 0 auto !important;
+        z-index: auto !important;
+        width: auto !important;
+        margin: 0 !important;
+        order: 3 !important;
+    }
+
+    .official-top-bar .portal-header-group {
+        flex: 1 1 auto !important;
+        order: 2 !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 8px !important;
+        width: auto !important;
+    }
+
+    .usa-banner-sub {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+        width: 100% !important;
+    }
+
+    .usa-banner-sub b,
+    .usa-banner-sub .how-you-know {
+        width: 100% !important;
+        display: block !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+    .side-seal {
+        height: 48px !important;
+        width: auto !important;
+    }
+
+    .official-portal-text {
+        font-size: 12px !important;
+        letter-spacing: 2px !important;
+    }
+
+    .usa-banner-sub {
+        font-size: 9px !important;
+    }
+
+    /* Mobile nav should be hidden */
+    nav {
+        display: none !important;
+    }
+
+    #hamburger {
+        display: block !important;
+    }
+
+    header {
+        text-align: center !important;
+    }
+
+    .logo {
+        margin: 0 auto !important;
+    }
+
+    .logo img {
+        width: 180px !important;
+        max-width: 100% !important;
+    }
+
+    #google_translate_element {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 15px auto 0 auto !important;
+    }
+
+    .goog-te-gadget-simple {
+        max-width: 220px !important;
+        width: 100% !important;
+    }
+
+    .cinematic-text-section h2 {
+        font-size: 2.6rem !important;
+        letter-spacing: 6px !important;
+    }
+
+    .text-panel {
+        max-width: 100% !important;
+        padding: 20px !important;
+        margin: 0 auto 30px auto !important;
+    }
+
+    .text-panel p,
+    .text-panel h2,
+    .text-panel h3 {
+        text-align: left !important;
+    }
+
+    .text-panel p {
+        font-size: 1rem !important;
+        line-height: 1.8 !important;
+        margin: 0 0 1em 0 !important;
+    }
+
+    .reality-slide-wrapper {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .reality-slideshow {
+        display: flex !important;
+        width: 300% !important;
+    }
+
+    .reality-slideshow img {
+        width: 33.33% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+    }
+
+    .reality-slider-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 auto 20px auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .reality-slider-card {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 0 0 48% !important;
+        width: 48% !important;
+        max-width: 48% !important;
+        min-width: 0 !important;
+        border-width: 1px !important;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .reality-slide-wrapper {
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        min-height: 160px !important;
+        flex: 1 1 auto !important;
+    }
+
+    .reality-slider-caption {
+        font-size: 8px !important;
+        margin: 5px 0 !important;
+    }
+
+    .reality-slideshow + p,
+    .text-panel p[style*="font-size: 9px"],
+    .text-panel p[style*="font-size: 8px"] {
+        font-size: 9px !important;
+        max-width: 100% !important;
+    }
+
+    .gallery-slider-container {
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+
+    .gallery-slider-container button {
+        padding: 8px 12px !important;
+        font-size: 16px !important;
+    }
+
+    .dot {
+        width: 8px !important;
+        height: 8px !important;
+        margin: 0 4px !important;
+    }
+
+    .contact-card {
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        padding: 20px !important;
+    }
+
+    .contact-card form {
+        gap: 12px !important;
+    }
+
+    .contact-card input,
+    .contact-card textarea {
+        font-size: 0.95rem !important;
+    }
+
+    .institution-links {
+        justify-content: center !important;
+        gap: 12px !important;
+    }
+
+    .institution-links a {
+        width: 80px !important;
+    }
+
+    .institution-links a img {
+        width: 60px !important;
+    }
+
+    .institution-links a span {
+        font-size: 9px !important;
+        line-height: 1.2 !important;
+    }
+
+    .global-footer {
+        padding: 30px 10px !important;
+    }
+
+    .global-footer p,
+    .footer-bottom {
+        text-align: center !important;
+    }
+}
+@media screen and (max-width: 950px) {
+    /* 1. Squeeze the Title */
+    #ascension-gate h1.glitch-text {
+        font-size: 8vw !important; /* Scales perfectly with screen width */
+        width: 90% !important;
+        margin: 0 auto 10px auto !important;
+        line-height: 1.1 !important;
+    }
+
+    /* 2. Fix the "Reality_01" description */
+    #ascension-gate .gate-status {
+        font-size: 14px !important;
+        width: 85% !important;
+        margin: 0 auto !important;
+        white-space: normal !important; /* Forces text to wrap to next line */
+    }
+
+    /* 3. Shrink the Button so it doesn't hit the edges */
+    #ascension-gate .gate-action {
+        font-size: 14px !important;
+        padding: 12px 20px !important;
+        width: auto !important;
+        max-width: 80% !important;
+    }
+}
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    p, li {
+        text-align: left;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 !important;
+    }
+
+    .text-panel {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+    }
+
+    .text-panel p, .text-panel h2 {
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .cinematic-text-section {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+    }
+
+    .cinematic-text-section p, .cinematic-text-section h2, .cinematic-text-section h3 {
+        padding: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .container {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+    }
+
+    div[style*="border"]:not(button) {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 10px 16px !important;
+        box-sizing: border-box !important;
+    }
+}
+#ascension-gate {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: black;
+    z-index: 100000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #ffd700;
+    /* This makes it start invisible */
+    opacity: 0; 
+    pointer-events: none;
+    padding: 5vh;
+}
+
+#ascension-gate .glitch-wrapper {
+    max-width: 90vw;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    #ascension-gate {
+        padding: 5vh 10vw;
+    }
+    
+    #ascension-gate .glitch-wrapper {
+        max-width: 800px;
+    }
+    
+    #ascension-gate h1.glitch-text {
+        font-size: 4rem !important;
+    }
+    
+    #ascension-gate .gate-status {
+        font-size: 1.2rem !important;
+        max-width: 700px;
+    }
+}
+
+/* This is the class that "Wakes Up" the gate with a glitch */
+.gate-appear {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    animation: heavy-shake 0.4s steps(2) forwards;
+}
+
+@keyframes shake {
+    0% { transform: translate(0,0) rotate(0deg); }
+    10% { transform: translate(-8px, 8px) rotate(2deg) scaleX(0.98); }
+    20% { transform: translate(8px, -8px) rotate(-2deg) scaleX(1.02); }
+    30% { transform: translate(-6px, 6px) rotate(1deg) scaleY(0.98); }
+    40% { transform: translate(6px, -6px) rotate(-1deg) scaleY(1.02); }
+    50% { transform: translate(-10px, 5px) rotate(2deg); }
+    60% { transform: translate(10px, -5px) rotate(-2deg); }
+    70% { transform: translate(-7px, -7px) rotate(1deg); }
+    80% { transform: translate(7px, 7px) rotate(-1deg); }
+    90% { transform: translate(-5px, 5px) rotate(0deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+
+.world-glitch-active {
+    animation: shake 0.15s infinite;
+    filter: saturate(2) hue-rotate(280deg) brightness(1.4) contrast(1.8) drop-shadow(0 0 15px #6600ff);
+    overflow: hidden;
+}
+
+#gate-glitch-video {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 100001;
+    opacity: 0;
+    pointer-events: none;
+    filter: contrast(180%) brightness(1.2);
+}
+
+@keyframes heavy-shake {
+    0% { transform: translate(20px, -20px); filter: invert(1); opacity: 0; }
+    25% { transform: translate(-20px, 20px); filter: hue-rotate(180deg); opacity: 1; }
+    50% { transform: translate(10px, -10px); filter: contrast(500%); }
+    75% { transform: translate(-10px, 10px); filter: brightness(2); }
+    100% { transform: translate(0); filter: none; opacity: 1; }
+}
+@media screen and (max-width: 950px) {
+    /* 1. Force the Gate to hide everything else */
+    #ascension-gate {
+        z-index: 100000 !important; /* Higher than your hamburger menu */
+        padding: 20px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    /* 2. Fix the Massive Header */
+    #ascension-gate h1.glitch-text {
+        font-size: 26px !important;
+        line-height: 1.1 !important;
+        width: 100% !important;
+        margin-top: 40px !important; /* Space it away from the top */
+    }
+
+   /* THE BLUE BUTTON FIX */
+.gate-action {
+    background-color: #0047AB !important; /* Deep Blue */
+    color: #ffffff !important;           /* White Text */
+    border: 2px solid #00BFFF !important; /* Cyan Border */
+    padding: 16px 40px !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    display: block !important;
+    margin: 30px auto !important;        /* Centers it horizontally */
+    width: 80% !important;               /* Fits mobile better */
+    max-width: 300px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 15px rgba(0, 71, 171, 0.6) !important;
+}
+
+/* HOVER EFFECT */
+.gate-action:hover {
+    background-color: #00BFFF !important; /* Electric Blue */
+    box-shadow: 0 0 25px #00BFFF !important;
+    transform: scale(1.02);
+}
+
+    /* 4. The Disclaimer Text */
+    .gate-status {
+        font-size: 14px !important;
+        width: 95% !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+    }
+}
+/* Keep the popup hidden initially */
+#welcome-modal, .modal, .popup-container {
+    display: none; 
+    visibility: hidden;
+}
+
+/* Ensure the Gate is always on top of the popup */
+#ascension-gate {
+    z-index: 2147483647 !important;
+}
     </style>
 </head>
 <body>
+    <!-- Gate Glitch Video (News-style overlay) -->
+    <video id="gate-glitch-video" muted>
+        <source src="" type="video/mp4">
+    </video>
+<div id="ascension-gate">
+    <div class="glitch-wrapper">
+        <h1 class="glitch-text">CRITICAL ERROR:<br>ACCESS DENIED</h1>
+        
+        <div id="gate-stage-1">
+            <p class="gate-status">
+                <span class="warning-icon">⚠️</span> <br>
+               DISCLAIMER: <span style="color: white;"> This site is a celestial anomaly that appears once in a million years. Copying intellectual content is strictly prohibited. What you see here must remain with you.</span>
+            </p>
+            <button class="gate-action" onclick="gateFlow()">I ACCEPT</button>
+        </div>
 
-    <div id="hamburger" onclick="toggleMenu()">
+        <div id="gate-stage-2" style="display: none;">
+            <p class="gate-status">
+                <span class="warning-icon">⚠️</span> <br>
+                <span style="color: white;">By proceeding, you agree to the terms and conditions of this site. You are responsible for your own actions and the knowledge you are about to receive.</span>
+            </p>
+            <button class="gate-action" onclick="gateFlow()">I ACCEPT</button>
+        </div>
+    </div>
+</div>
+    <audio id="gate-audio" loop src="mysterious-track.mp3"></audio>
+</div>
+</div>
+<div id="hamburger" onclick="toggleMenu()">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
     </div>
+    
 
     <div id="sideMenu">
-        <a href="javascript:void(0)" onclick="toggleMenu()" style="position: absolute; top: 10px; right: 25px; font-size: 36px;">&times;</a>
-        <p style="color: var(--accent-red); padding: 10px 30px; font-weight: bold;">QUICK ACCESS</p>
+        <a href="javascript:void(0)" onclick="toggleMenu()">×</a>
         <a href="index.html">HOME</a>
-        <a href="about.html">THE ARCHIVE</a>
-        <a href="membership.html">MEMBERSHIP</a>
-        <a href="Store.html">STORE</a>
+        <a href="about.html">THE ARCHIVE OF TRUTH</a>
+        <a href="news.html">WORLD INTELLIGENCE</a>
+        <a href="membership.html">ASCENSION PROTOCOL</a>
+    </div>
+<div class="official-top-bar">
+    <div class="seal-side">
+        <img src="images/bb.png" alt="Seal" class="side-seal">
     </div>
 
+    <div class="portal-header-group">
+        <div class="official-portal-text">OFFICIAL GLOBAL PORTAL</div>
+        <div class="usa-banner-sub">
+            <img src="images/uno.png" alt="US Flag" class="mini-flag">
+          <b>  An official website of the World Global government. </b>
+            <span class="how-you-know">Here's how you know</span>
+        </div>
+    </div>
+
+    <div class="seal-side">
+        <img src="images/nnjj.png" alt="UN Logo" class="side-seal">
+    </div>
+</div>
     <nav>
         <a href="index.html">HOME</a>
         <a href="about.html">THE ARCHIVE OF TRUTH</a>
@@ -166,53 +911,794 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Illuminati_triangle_eye.png/240px-Illuminati_triangle_eye.png" alt="Logo">
+                <img src="images/VZXF.png" alt="Logo">
             </div>
+        
+        
             <h1>ILLUMINATI NEW WORLD ORDER</h1>
-            <p>The path to enlightenment begins here.</p>
+            <p style="color: var(--gold); letter-spacing: 4px; font-size: 1rem; text-transform: uppercase; margin-top: 10px; font-weight: bold;">The path to enlightenment begins here.</p>
             <div id="google_translate_element"></div>
         </header>
 
-        <div class="main-content">
-            <div class="card">
-                <div class="card-header" style="display: flex; align-items: center; margin-bottom: 20px;">
-                    <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--gold); margin-right: 15px;"></i>
-                    <h2>Contact Council</h2>
-                </div>
-                <form action="https://formspree.io/f/xojjagee" method="POST">
-                    <div style="margin-bottom: 20px;">
-                        <label style="display: block; color: var(--light-gold); font-weight: bold; margin-bottom: 8px;">Your Email</label>
-                        <input type="email" name="_replyto" style="width:100%; padding:12px; background:#1a1a2e; border:1px solid var(--gold); color:white; border-radius:5px;" required>
-                    </div>
-                    <div style="margin-bottom: 20px;">
-                        <label style="display: block; color: var(--light-gold); font-weight: bold; margin-bottom: 8px;">Message</label>
-                        <textarea name="message" rows="5" style="width:100%; padding:12px; background:#1a1a2e; border:1px solid var(--gold); color:white; border-radius:5px;" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-secure">Send Secure Message</button>
-                </form>
+        <!-- VIDEO PLACEMENT: AFTER SUBHEADING, BEFORE NARRATIVE -->
+        <div style="width: 100%; max-width: 700px; margin: 0 auto 40px auto; border: 1px solid #333; background: #000; padding: 5px; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+            <video width="100%"  controls autoplay muted loop preload="auto">
+                <source src="images/CAR.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p style="color: #444; font-size: 10px; text-align: center; letter-spacing: 2px; margin-top: 8px; text-transform: uppercase;">Digital Intelligence Stream</p>
+        </div>
+<h6 style="color: rgb(20, 128, 243); text-align: center;"><b><i>'WE ARE NOT A SECRET CULT, BUT A SYSTEM'</i></b></h6>
+ <P style="margin-bottom: 30px;" ></P>  
+        <!-- OPEN BORDER NARRATIVE BOX -->
+        <div class="text-panel" style="max-width: 100%; margin: 0; text-align: left; padding: 0; border: none; background-color: rgba(0,0,0,0.6); color: #d1d1d1; line-height: 1.8; font-family: 'Times New Roman', serif;">
+            <h2 style="color: var(--gold); text-align: center; letter-spacing: 5px; text-transform: uppercase; font-size: 1.4rem; margin-top: 0;">Wake up to reality.</h2>
+            <div style="display: block; margin: 0;">
+    <div style="width: 100%; max-width: 400px;  background: #000; padding: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5);">
+        
+        <img src="images/eyer.jpeg" 
+             alt="The Awakening" 
+             style="max-width: 400px; width: 100%; display: block; margin: 0 auto; filter: brightness(0.7) sepia(0.5) contrast(1.2);">
+
+        <p style="font-size: 8px; color: #444; text-align: center; margin: 5px 0 0 0; letter-spacing: 3px; font-family: monospace;">
+            OBJECT_REF // REALITY_01
+        </p>
+    </div>
+</div>
+            <div class="cinematic-text-section">
+<h2 style="color: #FFD700;"><b><i>WELCOME</b></i></h2>
+               <p style="margin-top: 20px; text-align: right;" >To the Official Portal of the Illuminati Organisation the ultimate path to enlightment.</p>
+               <p>And before you embark on this quest of membership, we will opt to carefully explain  what is real and remind you, that true wisdom sterms from one's understanding of this statement "I know that I know nothing" </p> 
+<p>For there's a profound sorrow in the way the average human perceives existence. Most wander through life in a state of quiet ignorance, clinging to fragile ideologies—religion, nationality, and personal "morality"—as if these concepts were solid ground. In truth, they are merely anchors in a sea of chaos, designed to provide a false sense of security in a world that remains indifferent to your suffering.</p> 
+               <p>We judge the world through the narrow lens of our own small perceptions, yet we remain blind to the fact that our "choices" are often pre-determined.</p>
+            <p style="margin-top: 0;">The most dangerous form of blindness is believing that your perspective is the only reality, this blindness does not come from lack of vision but from refusal to see beyond oneself.</p>
+               <p>When a single view point becomes absolute, understanding collapses, judgment hardens, growth stops, and people begin confusing opinion with truth and belief with facts.</p>
+             <p>They stop listening because they assume they already know. Reality becomes narrow shaped only by personal experience, but the world does not exist through one lens. Every situation carries multiple angles, multiple truths, multiple interpretations. Ignoring that does not create clarity, it creates division.</p>  
+             <p>This kind of blindness limits learning, blocks empathy, and fuels conflict. Wisdom begins the moment one accepts that his/her perspective is not absolute and seeing beyond one's own view is not weakness, but awareness.</p>
+             <p style="margin-top: 30px;">If you peel back the layers of our shared history, you will not find a record of progress, but a relentless, <b>bloody cycle of violence</b>.</p>
+             <p>For millennia, the story of humanity was written in blood. Human history was marked by a relentless cycle of violence, conquest, and the systematic theft of land.</p>
+            <p>Ancient empires were built upon the broken backs of the conquered, with no regard for the sanctity of human life. For centuries, the world was ruled by the selfish constructs of color, creed, and religion—tools used by tyrants to divide the human race and justify the expansion of their own ego.</p>
+        </div>
+                <div class="reality-slider-row">
+    <div class="reality-slider-card">
+        <div class="reality-slide-wrapper">
+            <div class="reality-slideshow">
+                <img src="images/slave.jpeg" alt="Slide 1">
+                <img src="images/xcvb.jpeg" alt="Slide 2">
+                <img src="images/mnnm.jpeg" alt="Slide 3">
             </div>
         </div>
+        <p class="reality-slider-caption">ARCHIVE SLIDE // SEQUENCE_04</p>
     </div>
 
+    <div class="reality-slider-card">
+        <div class="reality-slide-wrapper">
+            <div class="reality-slideshow" style="animation-delay: 2s;">
+                <img src="images/21.jpeg" alt="Slide 4">
+                <img src="images/Tower 1.jpeg" alt="Slide 5">
+                <img src="images/VIRAL.jpeg" alt="Slide 6">
+            </div>
+        </div>
+        <p class="reality-slider-caption">FEED_ALPHA // 01</p>
+        <p class="reality-slider-caption">Tesla &amp; The wardenclyffe Tower</p>
+    </div>
+</div>
+           <div class="cinematic-text-section">
+<P style="margin-bottom:30px;"><b><i><span style="color:#0072ff"> "In this world, wherever there is light, there are also shadows. As long as the concept of winners exists, there must also be losers. The selfish desire of wanting to maintain peace causes wars, and hatred is born to protect love."</span></i></b></P>
+            
+            <h3 style="color: var(--gold); text-align: center; letter-spacing: 2px; text-transform: uppercase;">The Awakening: The weight of caring for our World</h3>
+            <p style="margin-Top: 25px;">
+               <P>In history, you were told that the World Wars ended because the forces of liberty outfought the forces of tyranny.</P> 
+You were told that slavery was abolished because the human conscience finally rebelled against its own cruelty.</P> 
+               <p> You were told of signatures on parchment forged by world leaders and that slavery was abolished because the heart of man finally chose mercy.</P>
+<p>Tell me honestly do you actually believe that the human heart can bury such hatred, given the number of lives and love ones that were loss and instead pursue global peace.</p>
+<p>For the history books are a carefully curated lie, a collection of dates and names designed to keep the masses focused on the stage while we pull the strings from the rafters.</p>
+<p>Pathetic delusions, stories that were told and orcherstrated to the masses/survivors so that they can break the cycle of hatred that governs humanity-a chain of pain that never breaks. And it was designed so, inorder to hide the fact that humanity in its raw state is a danger to itself</p>
+<P>To understand the true end of the World Wars and the global abolition of slavery, one must look past the generals and the presidents to the Eye that never blinks: the Illuminati.</P>
+<h3 style="color: var(--gold); text-align: center; letter-spacing: 2px; text-transform: uppercase;">How is humanity a danger to it's self</h3>
+  <p style="margin-Top: 25px;">
+ <p>The truth is much simpler than it seems, we humans are like a disease, and our free will is the fever that has been forever killing us.</p>
+ <p>For as long as there are those that remembered what was, there will always be those who are are unable to accept what can be, they will resist.</p>     
+<p> Humans are all but ordinary men, driven to revenge in the name of justice. But if revenge is called justice, then that justice breeds yet more revenge and becomes a chain of hatred.</p>
+ <P>The selfish desire of wanting to maintain peace causes wars, and hatred is born to protect love. These are causes, relationships that cannot be separated.</P>
+<P>One cannot help but know that people barely cannot understand each other. The world of humans is ruled by hatred alone.</P>
+<p>For nothing ever goes as planned in this accursed world. The longer you live, the more you realize that the only thing that truly exist in this reality are merely pain, suffering, and futility.</p>
+<P style="color: #0072ff;"><i><b> However every thing  change not untill when we first made contact with the Light.</i></b></P>
+  </div>
+ <p style="margin-bottom: 30px;">
+ <div class="cinematic-text-section"><h3 style="color: var(--gold); text-align: center; letter-spacing: 2px; text-transform: uppercase;">THE DIVINE LIGHT</h3>
+<div style="display: flex; justify-content: center; margin: 30px 0;">
+    <div style="width: 100%; max-width: 300px; /* Limits overall size */
+                aspect-ratio: 1 / 1;    /* Forces perfect square shape */
+                border: 0px solid rgba(255, 215, 0, 0.4); 
+                background: #000; 
+                box-shadow: 0 0 20px rgba(0,0,0,0.8); 
+                overflow: hidden; /* Important for cropping vertical content */
+                position: relative;">
+        
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            style="width: 100%; 
+                   height: 100%; 
+                   object-fit: cover; /* Forces video to fill square, crops excess */
+                   display: block; 
+                   filter: brightness(0.8) contrast(1.1);
+                   position: absolute;
+                   top: 0;
+                   left: 0;">
+            <source src="images/Light.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p style="font-size: 9px; 
+                  color: #666; 
+                  text-align: center; 
+                  margin: 0px; 
+                  padding: 0px 0;
+                  letter-spacing: 3px; 
+                  font-family: sans-serif; 
+                  text-transform: uppercase;
+                  background: #000; /* Keeps text legible */
+                  position: absolute;
+                  bottom: 0px;
+                  left: 0;
+                  width: 100%;">
+            INTELLIGENCE FEED// SQUARE SCALE
+        </p>
+    </div>
+</div>
+   <p> It first began with one person a U.S Scientist called  Tesla during one of his most ambitious laboratory experiment called project wardenclyffe intended to provide free, wireless energy and communication to the entire planet.</p>
+    <p>He built the wardenclyffe Tower on long island between 1901 and 1905.  The goal was to use the earth itself as a conductor to send  electricity and information through the ground and atmosphere without wires</p>
+    <p>But in the end his primary funder J.P.Morgan, withdrew support when he realized the project aimed for free energy that couldn't be easily metered and sold</p>
+    <p>Before the wardenclyffe tower was demolished for scrap in 1917, Tesla and his team went behind the back of morgan and quickly tried to activate the tower, but because they had little or no time and few resources they accidently triggered the unfinished tower which led to a new discovery </p>
+    <p>He discovered an infinite source of energy, one that would later breach the gap between science and spirituallity.  When this infinite source of energy was exposed by the tower, it existed in way, that one could not explained, it was like they tored through the very fabric of reality itself</p>
+<P>It wasn't a sun or a battery. It was an omnipresent, shimmering lattice that tore through every layer of existence. It was everywhere—in the air, in the soil, in the very space between your heartbeats. But as he reached out, he realized a haunting truth: there was no doorway and the light wasn't just energy, it was a <b><i>>higher conciousness</i></b>.</P>
+<p>The light could speak
+The Light didn't use words, it was telepathic and it communicated through a direct, overwhelming transmission of "knowing." Only those standing in its immediate radiance—those whose frequencies had been tuned by alchemical preparation—could receive the signal. It flooded their minds with Visions of the Broad Universe.</p>
+
+<p>The Light showed them how humanity was vibrating at a frequency of "Separation" and "Ego," which acted like a gravity well, pinning us to the 3 dimensional Plane. It revealed that our wars and our chains were symptoms and nature of the 3D. A plane materialism and ego.</p>
+<p>The Source showed them that the universe was teeming with layers of life and extraterestrial dimensional planes, but humanity was trapped within the 3 dimension(3D), because of our ignorance to see and move beyond our current state of conciousness . </p>
+ <p style="margin-top: 30px;"></p>
+
+ <div class="reality-slider-row">
+
+    <div class="reality-slider-card">
+        <div class="reality-slide-wrapper">
+            <div class="reality-slideshow" style="animation: slideAnimation 12s infinite ease-in-out;">
+                <img src="images/21.jpeg" alt="Slide 1" style="filter: brightness(0.6) sepia(0.4);">
+                <img src="images/Tower 1.jpeg" alt="Slide 2" style="filter: brightness(0.6) sepia(0.4);">
+                <img src="images/VIRAL.jpeg" alt="Slide 3" style="filter: brightness(0.6) sepia(0.4);">
+            </div>
+        </div>
+        <p class="reality-slider-caption">FEED_ALPHA // 01</p>
+        <p class="reality-slider-caption">Tesla & The wardenclyffe Tower</p>
+    </div>
+
+    <div class="reality-slider-card">
+        <div class="reality-slide-wrapper">
+            <div class="reality-slideshow" style="animation: slideAnimation 12s infinite ease-in-out; animation-delay: 2s;">
+                <img src="images/OAP PM.jpeg" alt="Slide 4" style="filter: brightness(0.6) sepia(0.4);">
+                <img src="images/cia 2.jpeg" alt="Slide 5" style="filter: brightness(0.6) sepia(0.4);">
+                <img src="images/OAp.jpeg" alt="Slide 6" style="filter: brightness(0.6) sepia(0.4);">
+            </div>
+        </div>
+        <p class="reality-slider-caption">FEED_BETA // 02</p>
+        <p class="reality-slider-caption">Office of Alien Property</p>
+    </div>
+
+</div>
+ </div>
+ <div class="cinematic-text-section">
+<p> Because of the nature of this new discovery, tesla decided to keep it for himself not untill the day he died. When tesla died it was rumored of how he had encountered/made contact with alliens(Infinite Source of energy).</p>
+<p>Tesla's death  during the  world war II was major security concern for the U.S government because of his previous claims regarding advanced military technology.</p>
+<p>So after his death the US goverment carried  out an operation called<b><i> project Nick under the Office of Alien property(OAP)</i></b> to officially confiscasted his scientific reasearch and inventions due to national security reasons, so they classfied some of his documents including project wardenclyffe.</p>
+<p>This happened because after the wardenclyffe tower project failed, where he discovered the light and kept it secret. Nicolas tesla was believe to have been  in contact with several foriegn goverments, most notably the soviet Union on a contract to built a massive mechanical device called<b> "TELEFORCE"</b>.</p>
+<p>Although tesla had a fluctuate of interest, he believed that his teleforce was a defensive weapon hoping on the fact if every nation had a wall of power to destroy invading planes, war would become impossible.</p>
+<P>Through Project Nick the O.A.P became aware of this higher conciousness and with the vast knowledge and secrets that came with it.</P>
+<p>However because the light had a complex nature which required rare extensive resources and regular fundings to fully understand. The U.S had to make confidential contracts with national and foriegn  global business families in Order to maintain funding the light, which they later called <b><i>project Aether</i></b>.</p>
+<p>This later lead to begining and creation of the very foundations of this prestigeous Organision, which they named;</p>
+ <h4 style="color:#FFD700;"><b> 'ILLUMINATI'</b>, extracted from the english word illumination derived from both the latin words illuminare and illuminatus meaning: <i>Enlightened, To throw into light or Light up</i>.</h4>
+<P>With the light we made new discoveries and gained hidden insight knowledge of the truth about humaninty and the universe as whole.We learned  how to manifest wealth and impose control on a global a scale.</P>
+ <p style="margin-top: 30px;"></p>
+<p>After the world war many great nations where exhausted and suffered financial loses, they where unable to rebuild themselve and where lost. This was when we stepped in. Inorder to create a silence that lasted, we had to impose an order that was absolute</p>
+<p>We  didn't just offer money; we offered the Science of the Ascension. Under the guidiance of the light We provided futuristic blueprints—modernization that was actually a reflection of the Higher Dimensional planes of conciousness (celestial geometry).
+<p> We made the nations sign a Sacred Contract, an underlying tie to an irreplaceable essence that anchored their loyalty not to a man, but to the will of the <i>Higher conciousness itself(The light)</i>.</p>
+<p>This contract was both physically and spiritually binding, woven into the DNA of the nations and their future generations. The leaders saw the Light and believed; they understood that if they ever broke this peace to begin another war, the price would be  catastrophic not only physically but mentally.</p>
+<p>We  did not need every small nation. We  targeted the Great Colonizers, the power nations whose reach spanned the globe. By binding the masters, we bound the territories. Everything implemented in London, Paris, or Berlin flowed directly into the veins of their colonies.</p>
+<p>The physical price was absolute. We  provided the trillions they needed to rebuild from the rubble, but in return, those nations signed over an annual share of their resources. Their minerals, their energy, and their labor became an asset inventory held by the Order.</p>
+<p>To keep this hidden, the United States was chosen as the primary Imposer of global peace (Puppet Leader). It was the perfect mask—a young, loud "democracy" that could act as the enforcer of the 3 Dimensional plane.</p>
+ <p style="margin-top: 30px;">
+<div style="display: flex; justify-content: center; margin: 30px 0;">
+    <div style="width: 100%; max-width: 300px; /* Limits overall size */
+                aspect-ratio: 1 / 1;    /* Forces perfect square shape */
+                border: 0px solid rgba(255, 215, 0, 0.4); 
+                background: #000; 
+                box-shadow: 0 0 20px rgba(0,0,0,0.8); 
+                overflow: hidden; /* Important for cropping vertical content */
+                position: relative;">
+        
+        <video 
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            style="width: 100%; 
+                   height: 100%; 
+                   object-fit: cover; /* Forces video to fill square, crops excess */
+                   display: block; 
+                   filter: brightness(0.8) contrast(1.1);
+                   position: absolute;
+                   top: 0;
+                   left: 0;">
+            <source src="images/MOND.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <p style="font-size: 9px; 
+                  color: #666; 
+                  text-align: center; 
+                  margin: 0px; 
+                  padding: 0px 0;
+                  letter-spacing: 3px; 
+                  font-family: sans-serif; 
+                  text-transform: uppercase;
+                  background: #000; /* Keeps text legible */
+                  position: absolute;
+                  bottom: 0px;
+                  left: 0;
+                  width: 100%;">
+            INTELLIGENCE FEED// SQUARE SCALE
+        </p>
+    </div>
+</div>
+<p> The US Dollar Bill was created as a talisman of this pact. It is not just currency; it is a contract printed on paper orcherstrated for global use. The All-Seeing Eye atop the pyramid on the  U.S dollar bill is the mark of the Orders surveillance, a reminder to the initiated that the wealth of the nation flows upward to the Capstone of the pyramid( The Great Architect).</p>
+<p> People who hold the true power in these nations know. They are the high-level initiates of the Order who manage the resources and pay the annual tribute to the light. They maintain ultimate Secrecy because they know that to manifest true power, it must remain unseen by the masses.</p>
+<P>We are no longer a species of warring egos. We are now a controlled and peacefull society, tuned to a frequency of order. The light didn't just end the wars; it liberated the mind from the illusion of reality.</P>
+<p>For we couldn't bring humanity to the light, so we decided to bring a reflection of the Light to humanity. We took the blueprints of the 4th dimension—the sacred geometry of the higher planes above us  and the undderstandings of the great teachers of the past—and began to "stamp" them onto the 3D world. We built a world of modernization and "order" to act as a placeholder for the evolution we weren't ready for.</p>
+<p>Every king who signed the Sacred Contract didn't just do it for the money; they did it because for one second, the Order let them stand in the glow. They saw the visions. They felt the telepathic weight of the divine light and they realized that to go against the Order was to go against the very fabric of the universe.</p>
+
+
+<p style="margin-top: 30px;"> We are a coinspiracy, we are myth and we are the villians of the society' in the eyes of public all for the sake that the world never falls into a total collapse of global peace.
+<p>We allowed our legacy to be tamed as 'evil' not because we are, but because it was necessary. For the world to remain unified, it needed a singular, immovable force to respect—or to fear. By accepting the role of the antagonist by the masses, we gave the world a common ground. We take the hatred of the masses so they do not turn that hatred toward their neighbors. We carry the stain of 'evil' as our greatest act of sacrifice, protecting the sanctity of life while being denied the right to be loved by it.</p>
+     <p style="margin-top: 30px;">This is the fundamental reality of life: Balance is bought with a price. There is no growth without pain, and no safety without a guardian who is willing to lose their soul to save yours. We have transcended the pathetic need for validation or 'goodness' in the eyes of the many.</p>
+     <p>Ending a global era forged by the gun/sword into one gorvened by a system. Whereby a confrontation dispute between two or more nations or races may end into a dialog rather than a conflict</p>       
+<p>Athough our intervention did not end human suffering. Pain, grief, and loss are woven into the very fabric of life. </p>
+    <p>
+    To promise a world without tears is to lie, and we deal only in the Real. Our goal was never to create a utopia, but to ensure survival.We established <b><span style="color: #0072ff;">Order Out Of Chaos</span></b>, for humanity was sprinting toward its own extinction.</p>
+    <p style="margin-bottom: 30px;"> Left to their own devices, the 'selfish constructs' of nations and ideologies would have eventually triggered a collapse from which there is no return. We did not pick up the sword to end every individual heartache; we picked it up to stop the species from committing collective suicide.</p>
+  
+
+<p style="margin-top: 30;">
+    <h3 style="color: var(--gold); text-align: center; letter-spacing: 2px; text-transform: uppercase;">Why must Humanity be gorvened is it truly necessary</h3>
+    <p style="margin-Top: 25px;">The truth is far heavier than it seems, for it is in  the very nature of humans to be governed. Throughout history we humans seek to save the world,but we don't want it to change</p>
+    <p>How is humanity saved if it is not allowed to evolve. We humans strive for peace, but cling to the very thing that prevents it.</p>
+    <p>Our free will "you call it a gift", we call it a malfuction. Without a hand to rule the darkness, what you call "free will" is nothing more than a slow motion suicide for our species</p>
+   <p> You've seen it in our very own actions over the millennia. Give a man a choice, and he will choose to strike his neighbor</p>
+  <p>Give a nation liberty,and it will use it to build a better way to burn the world to ash. Left to your own devices, humans are a plague that eventually consumes  itself until there's nothing left</p>     
+   <h3 style="color: var(--gold); text-align: center; letter-spacing: 2px; text-transform: uppercase;">This is the Climax of your existence.</h3>
+<p style="margin-Top: 25px;">
+      <p>We exist in the climax of this truth and the truth is much simpler than you think:Life is a race where the finish line keeps moving and the world is a game were most people are just pieces on the board.
+       <p>They work, they sleep, and they follow the path either we create or others made for them(Family lineage).</p> 
+       <p>But you can become an author of this world. For the world is a tragedy of free will,something which is divine and we cannot controll.</p>
+       <p>Even with our current system, the free will of humanity still leads to wars, poverty and chaos things which are out of our agenda and  also limits our influence.</p>
+       <p>We are  constantly looking not just for high level thinkers who are tierd of the average life, but for individuals who are smart enough to see beyond the viel of ignorance right up to the truth and brave ernough to take controll.</p>
+       <p>If you are exactly this description, someone who has attain a full understanding about life, then you are heavily welcome to our sacred ground.</p>
+       <p>For you have  being working too hard for results that should be coming to you naturally and have been trying to solve a problem on the same level it was created</p>
+       <p style="margin-Top: 25px;">Now that you are at the treshhold and have felt the malfunctions of the system. You have seen that national liberty, religion are all cages and human actions are often march towards ash.</p>
+       <p>We offer you the only thing that truly matters in a collapsing world:Architecturall Authority</p>
+      <p>If you join us, you stop being a victim of what happens in the news and start being the person who decides what the news will be. We offer you the power to protect your family and the chance to finally belong to the group that actually runs the planet.</p>
+        <p>You will no longer worry about money, safety, or your future. We  will give you the resources, the connections, and the protection you need to reach the top inorder to attain full awareness, hence exit the myth.You will have a seat at the system where you will have to journey your way right to the top of pyramid, were the real decisions are made.</p>
+        <p>For true peace is a fragile equillibrium maintained by the few.  To protect world peace and security, one must transcend thy self from being a "Subject of History" to becoming a "Guardian of History.</p>
+        <p>As we do not recruit to dominate;we recruit to sustain. Without the council, the scales of history will tip into a permanent shadow.</p>
+      <p> Life is a double-edged sword. To protect the breath of billions, we had to stifle the chaos that humanity calls 'freedom.' This is the profound truth of existence: Absolute peace requires absolute control.</p>
+<p>We maintain the balance not as gods, but as anchors. There is a deep sorrow in knowing that suffering still exists under our watch, but there is a greater, more sacred duty in knowing that because of us, the world still turns  and we need people like you with the sharpest of minds to help us keep the world moving in the right path. We are the barrier between the human race and the void it so desperately tries to reach.</p>
+   <p> As long as we exist, the world will never face a collapse of global peace. We are the ultimate safeguard.</p>  
+               </span></b> NOW that you have come to know all this. Will you continue to live in your shell of ignorance, or  accept the burden of the elite. 
+               <p>For in order to change the world, you must first transcend the pathetic limitations of being an "individual." You must become a <b>Guardian of the Real</b>.
+            </p>
+            <p>For further questions contact the Council below,
+                <P> but if you seek to trancend from a life random chance to a life deliberate purpose navigate to the Ascension protocol tab above and submit the neccessary requirements for membership.</p>
+        </div>
+    </div>
+   <div style="width: 100%; margin: 80px 0; display: flex; flex-direction: column; align-items: center;">
+
+    <h4 style="color: #FFD700; font-family: monospace; text-align: center; letter-spacing: 5px; font-size: 11px; margin-bottom: 30px; opacity: 0.8;">
+        // GLOBAL_OBSERVATION_GALLERY // SECTOR_007 //
+    </h4>
+
+    <div style="width: 100%; max-width: 1100px; position: relative;" class="gallery-slider-container">
+        <!-- Navigation Buttons -->
+        <button id="prevBtn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: #FFD700; border: 1px solid #FFD700; padding: 10px 15px; cursor: pointer; z-index: 10; font-size: 18px; transition: all 0.3s ease;">&#8249;</button>
+        <button id="nextBtn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.7); color: #FFD700; border: 1px solid #FFD700; padding: 10px 15px; cursor: pointer; z-index: 10; font-size: 18px; transition: all 0.3s ease;">&#8250;</button>
+
+        <!-- Slider Wrapper (constrains the visible area) -->
+        <div style="width: 100%; height: 400px; overflow: hidden; border-radius: 5px; position: relative;">
+            <!-- Slider Container -->
+            <div id="gallery-slider" style="position: relative; width: 100%; height: 100%; transition: transform 0.5s ease-in-out;">
+
+                <div class="slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    <img src="images/BVK.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 1">
+                </div>
+
+                <div class="slide" style="position: absolute; top: 0; left: 100%; width: 100%; height: 100%;">
+                    <img src="images/bilder.jpeg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 2">
+                </div>
+
+                <div class="slide" style="position: absolute; top: 0; left: 200%; width: 100%; height: 100%;">
+                    <img src="images/handshake1.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 3">
+                </div>
+
+                <div class="slide" style="position: absolute; top: 0; left: 300%; width: 100%; height: 100%;">
+                    <img src="images/IIIM.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 4">
+                </div>
+
+                <div class="slide" style="position: absolute; top: 0; left: 400%; width: 100%; height: 100%;">
+                    <img src="images/2018.04.18-Job-Offer-Acceptance-Email.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 5">
+                </div>
+
+                <div class="slide" style="position: absolute; top: 0; left: 500%; width: 100%; height: 100%;">
+                    <img src="images/880.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 6">
+                </div>
+
+                <div class="slide" style="position: absolute; top: 0; left: 600%; width: 100%; height: 100%;">
+                    <img src="images/man-signing-business-document-subscription-form-insurance-pa-application-papers-silver-pen-wooden-desk-61291001.jpg" style="width: 100%; height: 100%; object-fit: cover; display: block; border: 1px solid rgba(255,215,0,0.3);" alt="Slide 7">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Dots Indicator -->
+        <div id="dots" style="text-align: center; margin-top: 20px;">
+            <span class="dot active" data-slide="0" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+            <span class="dot" data-slide="1" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+            <span class="dot" data-slide="2" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+            <span class="dot" data-slide="3" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+            <span class="dot" data-slide="4" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+            <span class="dot" data-slide="5" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+            <span class="dot" data-slide="6" style="display: inline-block; width: 12px; height: 12px; background: #FFD700; border-radius: 50%; margin: 0 5px; cursor: pointer; opacity: 0.5; transition: all 0.3s ease;"></span>
+        </div>
+    </div>
+</div>
+<!-- CONTACT COUNCIL CARD: TRANSPARENT INPUTS WITH WHITE TEXT -->
+<div style="display: flex; justify-content: center; margin: 40px 0;">
+    <div class="contact-card" style="background: rgba(0,0,0,0.5); border: 1px solid var(--gold); border-radius: 10px; padding: 35px; width: 100%; max-width: 900px; box-sizing: border-box;">
+        
+        <h3 style="color: #FFD700; margin: 0 0 25px 0; font-size: 1.2rem; display: flex; align-items: center; text-transform: uppercase; letter-spacing: 2px;">
+            <span style="display: inline-block; width: 12px; height: 12px; background: #fff; margin-right: 12px; border-radius: 2px;"></span>
+            Contact Council
+        </h3>
+        
+        <form id="councilForm" action="https://formspree.io/f/xojjagee" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+            
+            <label style="display: block; color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Your Email</label>
+            <!-- Background is now transparent to match the outside -->
+            <input type="email" name="_replyto" id="emailInput" required 
+                style="width:100%; padding:15px; background: #0a0a14; border: 1px solid #444; color: #ffffff; border-radius: 5px; outline: none; font-size: 16px;">
+            
+            <label style="display: block; color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 12px; letter-spacing: 1px;">Message</label>
+            <!-- Background is now transparent to match the outside -->
+            <textarea name="message" id="messageInput" rows="5" required 
+                style="width:100%; padding:15px; background: #0a0a14; border: 1px solid #444; color: #ffffff; border-radius: 5px; outline: none; resize: none; font-size: 16px;"></textarea>
+            
+            <button type="submit" class="btn-secure">Send Secure Message</button>
+        </form>
+    </div>
+</div>
+
+<div style="width: 100%; background: #000; border-top: 1px solid rgba(255, 215, 0, 0.2); padding: 40px 20px; margin-top: 50px;">
+    <p style="color: #555; text-align: center; font-family: monospace; font-size: 10px; letter-spacing: 3px; margin-bottom: 30px; text-transform: uppercase;">
+        Authorized Institutional Links // Global Oversight
+    </p>
+
+    <div class="institution-links" style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
+        
+        <a href="https://www.un.org" target="_blank" style="text-decoration: none; text-align: center; width: 120px;">
+            <img src="images/UN-Logo.png" 
+                 style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">UN.ORG</span>
+        </a>
+
+        <a href="https://www.nato.int" target="_blank" style="text-decoration: none; text-align: center; width: 120px;">
+            <img src="images/BackgroundEraser_20260408_194405639.png" 
+                 style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;"
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">NATO.INT</span>
+        </a>
+
+        <a href="https://www.defense.gov" target="_blank" style="text-decoration: none; text-align: center; width: 120px;">
+            <img src="images/44.png" 
+                 style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;"
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">DEFENSE.GOV</span>
+        </a>
+
+        <a href="https://www.icc-cpi.int" target="_blank" style="text-decoration: none; text-align: center; width: 120px;">
+            <img src="images/BB4.png" 
+                 style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;"
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">ICC-CPI.INT</span>
+        </a>
+<a href="https://www.oas.org" target="_blank" style="text-decoration: none; text-align: center; width: 110px;">
+            <img src="images/9IU.png" style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">OAS.ORG</span>
+        </a>
+
+        <a href="https://www.nasa.gov" target="_blank" style="text-decoration: none; text-align: center; width: 110px;">
+            <img src="images/BackgroundEraser_20260413_214832685.png" style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">NASA.GOV</span>
+        </a>
+
+        <a href="https://www.unicef.org" target="_blank" style="text-decoration: none; text-align: center; width: 110px;">
+            <img src="images/UN09.png" style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">UNICEF.ORG</span>
+        </a>
+
+        <a href="https://www.nsa.gov" target="_blank" style="text-decoration: none; text-align: center; width: 110px;">
+            <img src="images/all bh.png" style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">NSA.GOV</span>
+        </a>
+
+        <a href="https://au.int" target="_blank" style="text-decoration: none; text-align: center; width: 110px;">
+            <img src="images/78B.png" style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">AU.INT</span>
+        </a>
+
+        <a href="https://asean.org" target="_blank" style="text-decoration: none; text-align: center; width: 110px;">
+            <img src="images/B66.png" style="width: 90px; filter: brightness(1.1); opacity: 1; transition: 0.3s;" 
+                 onmouseover="this.style.opacity='0.8';" 
+                 onmouseout="this.style.opacity='1';">
+            <span style="display: block; color: #0072ff; font-size: 8px; margin-top: 10px; font-family: sans-serif; font-weight: bold;">ASEAN.ORG</span>
+        </a>
+    </div>
+</div>
     <footer class="global-footer">
         <p>© 2026 Illuminati New World Order. All rights reserved.</p>
         <p>Official HQ: Undisclosed Location</p>
     </footer>
+<div id="nwoPopup" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: #000; border: 2px solid #FFD700; padding: 40px; width: 90%; max-width: 450px; text-align: center; position: relative; box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);">
+        
+        <button onclick="closePopup()" style="position: absolute; top: 10px; right: 15px; background: none; border: none; color: #FFD700; font-size: 24px; cursor: pointer;">&times;</button>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("sideMenu");
-            menu.style.width = (menu.style.width === "250px") ? "0px" : "250px";
-        }
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        <div style="margin-bottom: 20px;">
+            <img src="images/ZV.jpg" style="width: 80px; filter: sepia(1) brightness(1.2);">
+        </div>
 
+        <h2 style="color: #FFD700; font-family: 'Times New Roman', serif; letter-spacing: 3px; font-size: 28px; margin-bottom: 10px;">WELCOME TO THE <br>NEW WORLD ORDER, <span id="user-country">citizen</span></h2>
+        
+        <p style="color: #ccc; font-size: 14px; margin-bottom: 30px; line-height: 1.6;">Sign up for intelligence briefings and updates from the Global Stewardship.</p>
+
+        <a href="https://wa.me/15182778750" target="_blank" style="display: block; background: #8B0000; color: #fff; text-decoration: none; padding: 15px; font-weight: bold; border-radius: 5px; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);">
+            BECOME A MEMBER NOW
+        </a>
+    </div>
+</div>
+
+<style>
+    /* Add a hover effect to the button */
+    a[href^="https://wa.me"]:hover {
+        background: #b30000 !important;
+        transform: translateY(-2px);
+    }
+</style>
+<script type="text/javascript">
+function toggleMenu() {
+    var menu = document.getElementById("sideMenu");
+    if (menu) {
+        menu.style.width = (menu.style.width === "250px") ? "0px" : "250px";
+    }
+}
+function closePopup() {
+    // This line tells the browser to hide the element with ID nwoPopup
+    document.getElementById('nwoPopup').style.display = 'none';
+}
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+    }, 'google_translate_element');
+}
+
+// NECESSARY REQUIREMENTS ALERT LOGIC
+document.getElementById('councilForm').addEventListener('submit', function(event) {
+    const email = document.getElementById('emailInput').value;
+    const message = document.getElementById('messageInput').value;
+
+    if (!email || !message) {
+        event.preventDefault();
+        alert("ALERT: Please fill in your necessary requirements to proceed with transmission.");
+    }
+});
+// Function to show the popup after 9 seconds
+// Main function to fetch location and show popup
+async function triggerNWOPopup() {
+    console.log("1. Function started...");
+    
+    // Clear limit for testing - remove this line later
+    // localStorage.clear(); 
+
+    // Show popup immediately
+    const popup = document.getElementById('nwoPopup');
+    if (popup) {
+        popup.style.display = 'flex';
+        console.log("2. Popup is now visible.");
+    } else {
+        console.error("2. ERROR: Could not find element with ID 'nwoPopup'");
+    }
+
+    try {
+        console.log("3. Fetching location data...");
+        const response = await fetch('https://ipapi.co/json');
+        const data = await response.json();
+        
+        console.log("4. Data received:", data);
+
+        if (data.country_name) {
+            const country = data.country_name.toUpperCase();
+            const countrySpan = document.getElementById('user-country');
+            
+            if (countrySpan) {
+                countrySpan.innerText = country;
+                console.log("5. SUCCESS! Text changed to:", country);
+            } else {
+                console.error("5. ERROR: HTML element with ID 'user-country' is missing!");
+            }
+        }
+    } catch (error) {
+        console.error("3. ERROR: The API fetch failed. Check your internet connection.", error);
+    }
+}
+
+// 9-second delay
+window.onload = function() {
+    setTimeout(triggerNWOPopup, 9000);
+};
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 }); // Trigger when 20% of the text is visible
+
+    // Select all paragraphs and headings inside your cinematic section
+    const hiddenElements = document.querySelectorAll('.cinematic-text-section p, .cinematic-text-section h3');
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+
+<!-- Global Observation Gallery Slider JavaScript -->
+<script>
+    // Wait for DOM to be fully loaded and images to be ready
+    window.addEventListener('load', function() {
+        console.log('🚀 Gallery slider initializing...');
+
+        const slider = document.getElementById('gallery-slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot');
+
+        if (!slider) {
+            console.error('❌ Gallery slider element not found');
+            return;
+        }
+
+        if (slides.length === 0) {
+            console.error('❌ No slides found');
+            return;
+        }
+
+        console.log('✅ Found', slides.length, 'slides');
+
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        // Function to show slide
+        function showSlide(index) {
+            if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else if (index >= slides.length) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+
+            // Apply transform
+            const translateX = -currentSlide * 100;
+            slider.style.transform = `translateX(${translateX}%)`;
+            console.log('🎯 Showing slide', currentSlide, 'translateX:', translateX + '%');
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+                dot.style.opacity = i === currentSlide ? '1' : '0.5';
+            });
+        }
+
+        // Next slide
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Previous slide
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Auto slide function
+        function startAutoSlide() {
+            stopAutoSlide();
+            autoSlideInterval = setInterval(() => {
+                console.log('Auto-sliding to next slide');
+                nextSlide();
+            }, 4000);
+            console.log('▶️ Auto-slide started');
+        }
+
+        function stopAutoSlide() {
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = null;
+                console.log('⏸️ Auto-slide stopped');
+            }
+        }
+
+        // Event listeners
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Next button clicked');
+                nextSlide();
+                stopAutoSlide();
+                setTimeout(startAutoSlide, 2000);
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Prev button clicked');
+                prevSlide();
+                stopAutoSlide();
+                setTimeout(startAutoSlide, 2000);
+            });
+        }
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                console.log('Dot clicked:', index);
+                showSlide(index);
+                stopAutoSlide();
+                setTimeout(startAutoSlide, 2000);
+            });
+        });
+
+        // Pause auto slide on hover
+        const sliderContainer = document.querySelector('.gallery-slider-container');
+        if (sliderContainer) {
+            sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+            sliderContainer.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        // Initialize
+        console.log('🎯 Starting slider...');
+        showSlide(0);
+        startAutoSlide();
+        console.log('✅ Gallery slider ready!');
+    });
+    // This triggers the "Birth" of the gate
+let gateGlitchInterval = null;
+const gateVideos = [
+  'images/CAR.mp4',
+  'images/Light.mp4',
+  'images/MOND.mp4',
+  'images/opp.mp4',
+  'images/BNVFJ.mp4',
+  'images/WW1.mp4',
+  'images/WW2.mp4'
+];
+
+function triggerGateGlitch() {
+  const gate = document.getElementById('ascension-gate');
+  if (!gate || gate.style.display === 'none') return;
+
+  const v = document.getElementById('gate-glitch-video');
+  document.body.classList.add('world-glitch-active');
+
+  if (v) {
+    // Random video src
+    const randomVideo = gateVideos[Math.floor(Math.random() * gateVideos.length)];
+    v.querySelector('source').src = randomVideo;
+    v.load();
+    
+    // Random seek
+    v.currentTime = Math.random() * 10; // Assume ~10s videos
+    const randomOpacity = 0.3 + Math.random() * 0.5;
+    v.style.opacity = randomOpacity.toString();
+    v.play().catch(() => {});
+  }
+
+  const glitchDuration = 120 + Math.random() * 180;
+  setTimeout(() => {
+    document.body.classList.remove('world-glitch-active');
+    if (v) {
+      v.style.opacity = '0';
+      v.pause();
+    }
+  }, glitchDuration);
+}
+
+// Start glitch loop
+function startGateGlitches() {
+  stopGateGlitches();
+  gateGlitchInterval = setInterval(triggerGateGlitch, Math.random() * (8000 - 4000) + 4000);
+}
+
+// Stop glitch loop
+function stopGateGlitches() {
+  if (gateGlitchInterval) {
+    clearInterval(gateGlitchInterval);
+    gateGlitchInterval = null;
+  }
+}
+
+function initializeGate() {
+  const gate = document.getElementById('ascension-gate');
+  setTimeout(() => {
+    gate.classList.add('gate-appear');
+    triggerGateGlitch(); // Initial glitch
+    startGateGlitches(); // Start loop
+  }, 200);
+}
+
+window.addEventListener('load', initializeGate);
+
+let gateStep = 1;
+
+function gateFlow() {
+  const s1 = document.getElementById('gate-stage-1');
+  const s2 = document.getElementById('gate-stage-2');
+  const gate = document.getElementById('ascension-gate');
+
+  if (gateStep === 1) {
+    s1.style.display = 'none';
+    s2.style.display = 'block';
+    gateStep = 2;
+  } else {
+    stopGateGlitches(); // Stop glitches on accept
+    gate.style.transition = 'opacity 0.8s ease, filter 0.5s ease';
+    gate.style.filter = 'invert(1) blur(15px)';
+    gate.style.opacity = '0';
+    setTimeout(() => {
+      gate.style.display = 'none';
+    }, 800);
+  }
+}
+</script>
 </body>
 </html>
