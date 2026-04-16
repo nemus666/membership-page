@@ -26,8 +26,8 @@
             letter-spacing: 1px;
         }
         
-        body { background: #05050a; color: #d1d1d1; font-family: 'Georgia', serif; line-height: 1.8; margin: 0; padding: 60px; }
-        .container { max-width: 1000px; margin: auto; padding: 30px; background: rgba(255,255,255,0.01); border-left: 2px solid #FFD700; border-right: 2px solid #FFD700; border-top: 2px solid #FFD700; border-bottom: 2px solid #FFD700; }
+        body { background: #05050a; color: #d1d1d1; font-family: 'Georgia', serif; line-height: 1.8; margin: 0; padding: 60px; overflow-x: hidden; }
+        .container { max-width: 100%; margin: 0; padding: 0; background: rgba(255,255,255,0.01); border: none; }
         h1, h2, h3 { color: #FFD700; text-transform: uppercase; letter-spacing: 5px; text-align: center; }
         .depth-text { margin-bottom: 40px; text-align: justify; }
         .highlight { color: #ad4f37; font-weight: bold; }
@@ -79,6 +79,55 @@
             height: 100%;
             object-fit: cover;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.5); 
+        }
+    </style>
+    <link rel="stylesheet" href="global.css">
+    <style>
+        @media screen and (max-width: 950px) {
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow-x: hidden;
+            }
+            .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 10px !important;
+                margin: 0 !important;
+            }
+            .depth-text, .climax-section {
+                padding: 20px !important;
+                margin: 0 auto 20px auto !important;
+                text-align: left !important;
+            }
+            .depth-text p, .climax-section p {
+                font-size: 1rem !important;
+                line-height: 1.8 !important;
+                margin: 0 0 1em 0 !important;
+                text-align: left !important;
+            }
+            h1, h2, h3 {
+                font-size: 1.5rem !important;
+                letter-spacing: 2px !important;
+            }
+            .slider-container {
+                height: 250px !important;
+                margin: 20px 0 !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .slider-wrapper img {
+                width: 25% !important;
+                height: 100% !important;
+            }
+
+            div[style*="border"]:not(button) {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 10px 16px !important;
+                box-sizing: border-box !important;
+            }
         }
     </style>
 </head>
@@ -180,17 +229,18 @@
         <p>Official HQ: Undisclosed Location</p>
     </footer>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: true 
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+   <script type="text/javascript">
+function googleTranslateElementInit()
+ {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

@@ -144,7 +144,7 @@ h1 {
         .container { max-width: 100%; width: 100%; margin: 0; padding: 0; display: block; box-sizing: border-box;}
         header { text-align: center; padding: 30px 0; }
         .logo { margin: 0 auto; }
-.logo img { width: 300px; filter: drop-shadow(0 0 10px var(--gold)); }
+.logo img { width: 200px; filter: drop-shadow(0 0 10px var(--gold)); }
         
 h1 {
             font-size: 2.2rem; letter-spacing: 3px; text-transform: uppercase;
@@ -456,7 +456,7 @@ h1 {
     }
 
     .logo img {
-        width: 180px !important;
+        width: 140px !important;
         max-width: 100% !important;
     }
 
@@ -842,8 +842,8 @@ h1 {
 </head>
 <body>
     <!-- Gate Glitch Video (News-style overlay) -->
-    <video id="gate-glitch-video" muted>
-        <source src="" type="video/mp4">
+    <video id="gate-glitch-video" muted preload="auto" playsinline">
+        <source src="images/opp.mp4" type="video/mp4">
     </video>
 <div id="ascension-gate">
     <div class="glitch-wrapper">
@@ -866,7 +866,7 @@ h1 {
         </div>
     </div>
 </div>
-    <audio id="gate-audio" loop src="mysterious-track.mp3"></audio>
+<!-- Audio removed: file missing -->
 </div>
 </div>
 <div id="hamburger" onclick="toggleMenu()">
@@ -1613,15 +1613,7 @@ window.onload = function() {
     });
     // This triggers the "Birth" of the gate
 let gateGlitchInterval = null;
-const gateVideos = [
-  'images/CAR.mp4',
-  'images/Light.mp4',
-  'images/MOND.mp4',
-  'images/opp.mp4',
-  'images/BNVFJ.mp4',
-  'images/WW1.mp4',
-  'images/WW2.mp4'
-];
+const gateVideos = ['images/opp.mp4'];
 
 function triggerGateGlitch() {
   const gate = document.getElementById('ascension-gate');
@@ -1643,14 +1635,7 @@ function triggerGateGlitch() {
     v.play().catch(() => {});
   }
 
-  const glitchDuration = 120 + Math.random() * 180;
-  setTimeout(() => {
-    document.body.classList.remove('world-glitch-active');
-    if (v) {
-      v.style.opacity = '0';
-      v.pause();
-    }
-  }, glitchDuration);
+const glitchDuration = 300 + Math.random() * 300;\n  setTimeout(() => {\n    document.body.classList.remove('world-glitch-active');\n    if (v) {\n      v.style.opacity = '0';\n      v.pause();\n    }\n  }, glitchDuration);
 }
 
 // Start glitch loop
@@ -1676,7 +1661,7 @@ function initializeGate() {
   }, 200);
 }
 
-window.addEventListener('load', initializeGate);
+document.addEventListener('DOMContentLoaded', initializeGate);
 
 let gateStep = 1;
 

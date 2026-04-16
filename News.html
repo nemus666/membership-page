@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <title>Global Intelligence Briefing | Illuminati</title>
     <style>
+#glitch-video {
+    position: fixed;   /* This makes it stay on top of the whole screen */
+    top: 0;
+    left: 0;
+    width: 100vw;      /* Full viewport width */
+    height: 100vh;     /* Full viewport height */
+    object-fit: cover; /* This prevents the video from looking 'stretched' */
+    z-index: 99999;    /* This puts it above all your text and images */
+    opacity: 0;        /* Keep it invisible until the glitch triggers */
+    pointer-events: none; /* Allows you to click buttons 'through' the video */
+    filter: contrast(180%) brightness(1.2); /* Optional: Makes it look more like a digital error */
+}
+    /* Styles the main translation button */
+.goog-te-gadget-simple {
+    background-color: #1a1a1a !important; /* Dark background */
+    border: 1px solid #FFD700 !important; /* Gold border */
+    padding: 5px !important;
+    border-radius: 4px !important;
+}
+
+/* Styles the text inside the button */
+.goog-te-gadget-simple span, .goog-te-menu-value span {
+    color: #FFD700 !important; /* Gold text */
+    font-weight: bold !important;
+}
+
+/* Hides the Google Logo for a cleaner look */
+.goog-te-gadget img {
+    display: none !important;
+}
+
+/* Styles the actual dropdown menu (The white box) */
+.goog-te-menu-frame {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5) !important;
+}
         .global-footer {
             width: 100%;
             margin-top: 60px; /* Pushes it away from the boxes above */
@@ -51,8 +86,9 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: center; /* This centers the framed box */
+            align-items: center;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         /* This is your actual "Page" with the gold border */
@@ -64,7 +100,7 @@
             background-color: #05050a; /* Dark inside the box */
             
             /* THE BORDER GOES HERE */
-            border: 2px solid #FFD700;
+            border: none;
             box-shadow: 0 0 20px rgba(0,0,0,0.5); /* Makes the box pop */
             
             box-sizing: border-box;
@@ -75,9 +111,125 @@
         h1 { color: #FFD700; text-align: center; margin-bottom: 30px; }
         .intel-report { line-height: 1.6; text-align: justify; }
         .highlight { color: #FFD700; font-weight: bold; }
+       #bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 105%; /* Slightly larger for the movement trick */
+    min-height: 105%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%); /* Centers the video */
+    
+    /* THE WATERMARK LOOK */
+    opacity: 0.1; /* Adjust this (0.05 to 0.15) to make it very faint */
+    filter: grayscale(100%) brightness(0.8); /* Makes it moody and dark */
+    
+    pointer-events: none;
+    transition: transform 0.2s ease-out; /* Smooths the mouse movement */
+}
+   .archive-section {
+    border: 1px solid #d4af37; /* A thin gold border */
+    padding: 20px;
+    margin: 40px auto; /* Adds space between the boxes */
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    color: white;
+}
+
+.archive-section h2 {
+    color: #d4af37; /* Gold headings */
+    text-transform: uppercase;
+}
+   /* THE SCANNER */
+.scanner-line {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to bottom, transparent, #d4af37, transparent); /* Your Gold color */
+    box-shadow: 0 0 15px #d4af37;
+    z-index: 99999;
+    pointer-events: none; /* Allows you to click things 'under' the line */
+    animation: scanMove 8s linear infinite; /* Slow, creepy movement */
+}
+
+@keyframes scanMove {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+
+.world-glitch-active {
+    animation: shake 0.15s infinite;
+    filter: saturate(2) hue-rotate(280deg) brightness(1.4) contrast(1.8) drop-shadow(0 0 15px #6600ff); /* Intense purple/blue agonizing effect */
+    overflow: hidden; /* Prevents scrollbars during the shake */
+}
+
+@keyframes shake {
+    0% { transform: translate(0,0) rotate(0deg); }
+    10% { transform: translate(-8px, 8px) rotate(2deg) scaleX(0.98); }
+    20% { transform: translate(8px, -8px) rotate(-2deg) scaleX(1.02); }
+    30% { transform: translate(-6px, 6px) rotate(1deg) scaleY(0.98); }
+    40% { transform: translate(6px, -6px) rotate(-1deg) scaleY(1.02); }
+    50% { transform: translate(-10px, 5px) rotate(2deg); }
+    60% { transform: translate(10px, -5px) rotate(-2deg); }
+    70% { transform: translate(-7px, -7px) rotate(1deg); }
+    80% { transform: translate(7px, 7px) rotate(-1deg); }
+    90% { transform: translate(-5px, 5px) rotate(0deg); }
+    100% { transform: translate(0,0) rotate(0deg); }
+}
+   </style>
+    <link rel="stylesheet" href="global.css">
+    <style>
+        @media screen and (max-width: 950px) {
+            body {
+                padding: 0 !important;
+                margin: 0 !important;
+                overflow-x: hidden;
+            }
+            .news-container, .news-item {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 20px 10px !important;
+                margin: 0 auto 20px auto !important;
+            }
+            .news-item p {
+                font-size: 1rem !important;
+                line-height: 1.8 !important;
+                margin: 0 0 1em 0 !important;
+                text-align: left !important;
+            }
+            h1, h2, h3 {
+                font-size: 1.5rem !important;
+                letter-spacing: 2px !important;
+            }
+            .news-image {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            div[style*="border"]:not(button) {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin: 0 auto !important;
+                padding: 10px 16px !important;
+                box-sizing: border-box !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Put this at the very top of your <body> -->
+<video muted id="glitch-video">
+    <source src="images/opp.mp4" type="video/mp4">
+</video>
+    
+   <!-- The 'muted' and 'autoplay' tags are REQUIRED for the video to play automatically -->
+<video autoplay muted loop id="bg-video">
+    <source src="images/BNVFJ.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+</video>
   <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
     <a href="index.html" style="
         text-decoration: none;
@@ -125,24 +277,90 @@
             <p style="font-size: 0.9rem; color: #87CEEB;">>Real-time analysis: The Order's role in stabilizing 120 million displaced persons.</p>
         </div>
     </div> 
-
+<!-- Section III: The Cold War Era -->
+<div class="archive-section">
+    <h2>II. The Shadow Network (1950 – 2000)</h2>
+    <p>While the world looked at the walls being built, we were the ones holding the blueprints. Every conflict was a calculation.</p>
+</div>
+<!-- Section IV: The Digital Grid -->
+<div class="archive-section">
+    <h2>III. Modern Dominion (Present)</h2>
+    <p>Privacy is a myth. Every click, every search, every movement is recorded in the Great Ledger of the Order.</p>
+</div>
     <footer class="global-footer">
         <hr class="footer-line"> 
         <p>© 2026 Illuminati New World Order. All rights reserved.</p>
         <p>Official HQ: Undisclosed Location</p>
     </footer>
    </div>
+<!-- THE SCANNER LINE -->
+<div class="scanner-line"></div>
 
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: true 
-            }, 'google_translate_element');
+
+     <script type="text/javascript">
+function googleTranslateElementInit()
+ {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'en,es,pt,de,fr,pl,tr,zh-CN,ja,it',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+    // 1. Interactive Background Video Movement
+    document.addEventListener("mousemove", (e) => {
+        const x = (window.innerWidth / 2 - e.pageX) / 80;
+        const y = (window.innerHeight / 2 - e.pageY) / 80;
+        const bgVid = document.getElementById('bg-video');
+        if(bgVid) {
+            bgVid.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
         }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    });
 
+    // 2. The Master Glitch Function (Full Page + Video Flash with Random Segments)
+    function triggerFullGlitch() {
+        const v = document.getElementById('glitch-video');
+        
+        // This activates your CSS .world-glitch-active (Shake & Intense Purple/Blue Effect)
+        document.body.classList.add('world-glitch-active');
+        
+        if (v) {
+            // Randomly seek to different parts of the video
+            if (v.duration) {
+                v.currentTime = Math.random() * v.duration;
+            } else {
+                // Fallback if duration isn't loaded yet
+                v.currentTime = Math.random() * 5;
+            }
+            
+            // Vary the opacity intensity for more agonizing effect
+            const randomOpacity = 0.3 + Math.random() * 0.5; // 0.3 to 0.8
+            v.style.opacity = randomOpacity.toString();
+            v.play().catch(() => { /* Autoplay safety */ }); 
+        }
+
+        // Snap everything back to normal after random duration (120-300ms for intensity)
+        const glitchDuration = 120 + Math.random() * 180;
+        setTimeout(() => {
+            document.body.classList.remove('world-glitch-active');
+            if (v) {
+                v.style.opacity = "0";
+                v.pause();
+            }
+        }, glitchDuration);
+
+        // Schedule next random glitch (8-15 seconds)
+        setTimeout(triggerFullGlitch, Math.random() * (15000 - 8000) + 8000);
+    }
+
+    // 3. Start the system 3 seconds after page loads
+    window.onload = () => {
+        console.log("ILLUMINATI SYSTEM: ONLINE.");
+        setTimeout(triggerFullGlitch, 3000);
+    };
+</script>
  </body>
+</html>
