@@ -1695,7 +1695,8 @@ function gateFlow() {
     gate.style.filter = 'invert(1) blur(15px)';
     gate.style.opacity = '0';
     setTimeout(() => {
-      gate.style.display = 'none';
+      gate.remove(); // Fully remove from DOM to reveal content
+      document.body.style.overflow = 'auto'; // Restore scroll if needed
     }, 800);
   }
 }
